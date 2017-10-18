@@ -7,8 +7,8 @@ if [[ $UID != 0 ]]; then
 fi
 
 mkdir /etc/alsa
-cp asound.hdmi-connected asound.hdmi-disconnected hdmi-switch.sh /etc/alsa/
-/etc/alsa/hdmi-switch.sh
+cp asound.dp-connected asound.dp-disconnected dp-switch.sh /etc/alsa/
+/etc/alsa/dp-switch.sh
 
-cp 90-hdmi.rules /etc/udev/rules.d/
+cp 90-dp.rules /etc/udev/rules.d/
 udevadm control --reload-rules

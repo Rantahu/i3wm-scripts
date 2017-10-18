@@ -1,4 +1,4 @@
-pcm.hdmi1 {
+pcm.dp1 {
     type hw
     card 0
     device 3
@@ -6,5 +6,5 @@ pcm.hdmi1 {
 
 pcm.!default {
     type  plug
-    slave.pcm "hdmi1"
+    slave.pcm "dp1"
 }
