@@ -14,12 +14,6 @@ change-display() {
   fi
 }
 
-change-audio() {
-  ln -sf "/etc/alsa/asound.dp-$dp_status" /etc/asound.conf
-  /usr/sbin/alsactl restore
-}
-
 change-display
-change-audio
 
 exit 0

@@ -6,9 +6,5 @@ if [[ $UID != 0 ]]; then
     exit 1
 fi
 
-mkdir /etc/alsa
-cp asound.dp-connected asound.dp-disconnected dp-switch.sh /etc/alsa/
-/etc/alsa/dp-switch.sh
-
 cp 90-dp.rules /etc/udev/rules.d/
 udevadm control --reload-rules

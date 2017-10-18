@@ -10,16 +10,9 @@ See the [dotfiles repo](https://github.com/ruudud/dotfiles/blob/master/i3/config
 for example config.
 
 
-## When HDMI connects, fix monitor setup and HDMI audio
-To configure Alsa to use HDMI sound when connected,
-edit the `asound.hdmi-connected` script in the `hdmi-switch/` folder, and then
-run the `install.sh` script. `The hdmi-switch.sh` script is run each time the
+## When Display Port is connected, fix monitor setup
+`The hdmi-switch.sh` script is run each time the
 HDMI cable is connected or disconnected, and also runs xrandr.
-
-An [answer on StackExchange](http://unix.stackexchange.com/questions/29185/how-to-check-why-sound-over-hdmi-doesnt-work)
-provides help on finding the correct Alsa device and card.
-
-TODO: switch to Pulseaudio?
 
 
 # Lock on suspend (when closing laptop lid)
@@ -45,12 +38,12 @@ WantedBy=sleep.target
 
 # Dimming screen when on battery, monitor off
 Add the file `/etc/pm/power.d/performance` with the following contents;
- 
+
 ```shell
 #!/bin/sh
 
 if [ "$1" = "true" ]
-then 
+then
     # Battery
     # Dim screen
     echo 13 > /sys/class/backlight/acpi_video0/brightness
